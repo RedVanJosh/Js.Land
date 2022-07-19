@@ -1,7 +1,13 @@
-import { Serve } from "../lobot.js";
+/**
+ * @type {Navigation}
+ * @param options {Object} [options] - A optional config object which can be passed into the template giving contextual data.
+ * @returns {Promise<string>}
+ * @constructor
+ */
 
-async function Navigation() {
-  return `
+async function Navigation(options) {
+    const optionsOrNull = options || {};
+    return `
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#page-top" aria-label="Js.Land main navigation">
@@ -13,9 +19,10 @@ async function Navigation() {
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>                            </ul>
+                  <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                </ul>
             </div>
         </div>
     </nav>
